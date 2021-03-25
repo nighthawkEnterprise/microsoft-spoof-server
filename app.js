@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 mongoose.connect('mongodb+srv://nithinmoorthy11:Hello123@cluster0.wnzxq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true});
 app.use('/login', loginRoutes);
 
+app.get('/', function(req, res) {
+  res.send({message: 'hello'});
+});
 const connection= mongoose.connection;
 connection.once('open', function() {
   console.log("Successful Connection to DB");
